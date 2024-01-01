@@ -30,6 +30,7 @@
   --secondary-ff: "Poppins", sans-serif;
   --color-primary: hsl(257, 40%, 49%);
   --color-accent: hsl(300, 69%, 71%);
+  --color-neutral: hsl(0, 100%, 100%);
 }
 
 *,
@@ -42,4 +43,116 @@
 
 body {
   font-family: var(--primary-ff);
+}
+
+.content {
+  min-height: 100vh;
+  background-color: var(--color-primary);
+  background-image: url("./../assets/images/bg-desktop.svg");
+}
+
+.wrapper {
+  --width: 81.25rem;
+  max-width: var(--width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header {
+  padding: 3rem 0;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3rem;
+}
+
+.hero__image {
+  width: 100%;
+}
+
+.hero__content {
+  color: var(--color-neutral);
+  padding: 0 2rem;
+}
+
+.hero__title {
+  font-size: 2rem;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+.hero__description {
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.footer {
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.socials {
+  margin-left: auto;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socials__link:link,
+.socials__link:visited {
+  border: 2px solid var(--color-neutral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+}
+
+.socials__icon {
+  color: var(--color-neutral);
+  font-size: 1.3rem;
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.link--register:link,
+.link--register:visited {
+  background-color: var(--color-neutral);
+  color: var(--color-primary);
+  font-weight: 600;
+  padding: 1rem 3.75rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 10rem;
+}
+
+@media (max-width: 56rem) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .wrapper {
+    --width: 30rem;
+  }
+
+  .hero__content {
+    text-align: center;
+  }
+
+  .footer {
+    padding-top: 4rem;
+    justify-content: center;
+  }
+
+  .socials {
+    margin-left: 0;
+  }
 }
